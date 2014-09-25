@@ -9,7 +9,7 @@ On the first host:
   
 On the second host:
 
-    docker attach $(weave run 10.0.2.105/8 -t -i cazcade/weave-multicast-test)
+    docker attach $(weave run 10.0.2.105/8 -t -i cazcade/weave-multicast-test send)
   
 Anything typed into the second host should appear on the first.
 
