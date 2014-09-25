@@ -1,4 +1,4 @@
-FROM java
+FROM mhutter/java
 RUN apt-get install -y build-essential curl
 ADD jgroups.jar /jgroups.jar
 ADD run.sh /run.sh
