@@ -11,10 +11,10 @@ then
 elif [[ $1 == "send" ]] 
 then
   java -Djava.net.preferIPv4Stack=true -cp /jgroups.jar org.jgroups.tests.McastSenderTest -bind_addr ${ip} -mcast_addr 231.12.21.132 -port 45566
-elif [[ $1 == "rcv" ]] 
+elif [[ $1 == "snd" ]] 
 then
 ./mcsend 239.1.2.3 1234
-elif [[ $1 == "snd" ]] 
+elif [[ $1 == "rcv" ]] 
 then
 ./mcreceive 239.1.2.3 1234
 else
