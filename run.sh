@@ -8,12 +8,17 @@ ip=$(ip addr show ethwe | grep inet | grep -v inet6 | sed 's/^[ ]*inet //g'| cut
 if [[ $1 == "receive" ]] 
 then
   java -Djava.net.preferIPv4Stack=true -cp /jgroups.jar org.jgroups.tests.McastReceiverTest -bind_addr ${ip} -mcast_addr 231.12.21.132 -port 45566 
-elsif [[ $1 == "send" ]] 
+elif [[ $1 == "send" ]] 
+then
   java -Djava.net.preferIPv4Stack=true -cp /jgroups.jar org.jgroups.tests.McastSenderTest -bind_addr ${ip} -mcast_addr 231.12.21.132 -port 45566
-elsif [[ $1 == "rcv" ]] 
+elif [[ $1 == "rcv" ]] 
+then
 ./mcsend 239.1.2.3 1234
-elsif [[ $1 == "snd" ]] 
+elif [[ $1 == "snd" ]] 
+then
 ./mcreceive 239.1.2.3 1234
+else
+  echo "snd,rcv,receive or send"
 fi
 
 
