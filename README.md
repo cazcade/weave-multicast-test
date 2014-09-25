@@ -11,6 +11,6 @@ On the second host:
 
     docker attach $(weave run 10.0.2.105/8 -t -i cazcade/weave-multicast-test)
   
-Anything typed into one host should appear on the other.
+Anything typed into the second host should appear on the first.
 
 
