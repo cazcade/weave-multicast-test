@@ -2,5 +2,9 @@
 while ! grep -q ^1$ /sys/class/net/ethwe/carrier 2>/dev/null
 do sleep 1
 done
-java -cp /jgroups.jar org.jgroups.tests.McastReceiverTest -mcast_addr 231.12.21.132 -port 45566 &
-java -cp /jgroups.jar org.jgroups.tests.McastSenderTest -mcast_addr 231.12.21.132 -port 45566
+if [[ $1 == "receive" ]] 
+then
+  java -cp /jgroups.jar org.jgroups.tests.McastReceiverTest -mcast_addr 231.12.21.132 -port 45566 
+else
+  java -cp /jgroups.jar org.jgroups.tests.McastSenderTest -mcast_addr 231.12.21.132 -port 45566
+fi
