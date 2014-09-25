@@ -13,4 +13,13 @@ On the second host:
   
 Anything typed into the second host should appear on the first.
 
+To try the latest fix download weave-test.sh and use on Host 1
+
+    ./weave-test.sh receive
+
+and on Host 2
+
+    ./weave-test.sh send
+
+
 
